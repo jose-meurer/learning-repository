@@ -1,7 +1,9 @@
-import java.sql.SQLOutput;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
+    private static int a;
+
     public static void main(String[] args) {
 
         //Exemplo 1 de estrutura sequencial
@@ -25,6 +27,11 @@ public class Main {
 
         System.out.println();
         exercicio_1();
+        System.out.println();
+        exercico_2();
+
+        Scanner sc = new Scanner(System.in);
+        exercicio_3(sc);
     }
 
 
@@ -49,5 +56,32 @@ public class Main {
         System.out.printf("Measue with eight decimal places: %.8f%n", measure);
         System.out.printf("Rouded (three decimal places): %.3f", measure);
         System.out.printf("US decimal point: %.3f", measure);
+    }
+
+    static void exercico_2() {
+        int a = 5, b = 2;
+        double result;
+
+        result = (double) a / b; //casting
+        System.out.println(result);
+    }
+
+    static void exercicio_3(Scanner sc) {
+
+        String a;
+        int b;
+        double c;
+
+        a = sc.next();
+        b = sc.nextInt();
+        c = sc.nextDouble();
+        sc.next(); //consome o buff da quebra de linha gerado pelo nextDouble();
+        String s1 = sc.nextLine();
+
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(s1);
     }
 }
