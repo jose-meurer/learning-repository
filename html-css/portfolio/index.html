@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=McLaren&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet" />
 
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon/Elegantthemes-Beautiful-Flat-One-Color-Dev.32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/icomoon/style.css" />
     <link rel="stylesheet" href="./css/style.css" />
 
     <title>Jose Meurer - Web Profile</title>
@@ -19,7 +21,7 @@
   <body>
     <!-- Inicio Header -->
     <header class="header">
-      <div class="container">
+      <div class="container header__container">
         <div class="header__logo">
           <p>Uma Imagem</p>
           <!-- adicionar imagem svg -->
@@ -35,29 +37,36 @@
       </div>
     </header>
     <!-- Fim Header -->
-    <section>
-      <div>
-        <h1>José Meurer</h1>
-        <p>Desenvolvedor Back End</p>
-        <div>
-          <a href="#">Curriculum</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Github</a>
+    <section class="about">
+      <div class="container about__container">
+        <div class="about__card">
+          <span class="about__firstName">José</span>
+          <span class="about__lastName">Meurer</span>
+          <p class="about__description">Desenvolvedor Back End</p>
+          <div class="about__social">
+            <a href="/assets/download/JoseMeurer.pdf" target="_blank"
+              >Curriculum<i class="icon-folder-download"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/jose-meurer/" target="_blank"
+              >LinkedIn<i class="icon-linkedin"></i
+            ></a>
+            <a href="https://github.com/jose-meurer" target="_blank"
+              >Github<i class="icon-github"></i
+            ></a>
+          </div>
         </div>
-      </div>
-      <div>
-        <div>
-          <!-- Adicionar imagem -->
+        <div class="about_img">
+          <div>
+            <img src="https://placehold.co/400x400" alt="" />
+          </div>
         </div>
       </div>
     </section>
     <footer>
-      <div>
+      <div class="container">
         <p>
           ©2024 Desenvolvido por
-          <a href="https://github.com/jose-meurer/" target="_blank"
-            >JoseMeurer</a
-          >
+          <a href="https://github.com/jose-meurer/" target="_blank">JoseMeurer</a>
         </p>
       </div>
     </footer>
