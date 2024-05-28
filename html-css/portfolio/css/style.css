@@ -5,11 +5,11 @@
   --color-active-link: rgba(0, 0, 0, 0.1);
   --color-dark-text: rgb(0, 0, 0);
   --color-light-text: #fafafa;
-  --color-highlight: #4488BB;
+  --color-highlight: #4488bb;
   --color-background: #ededed;
   --color-box-shadow: rgb(0, 0, 0, 0.3);
 
-  --font-family-primary: 'Readex Pro';
+  --font-family-primary: "Readex Pro";
   --font-family-secondary: "McLaren", cursive;
 
   --trasition-time: 0.3s;
@@ -115,7 +115,8 @@ a {
   transition: all var(--trasition-time) linear;
 }
 
-.header__item a:hover::before {
+.header__item a:hover::before,
+.header__item a:focus::before {
   width: 100%;
 }
 
@@ -123,20 +124,18 @@ a {
   outline: none;
 }
 
-.header__item a:focus::before {
-  width: 100%;
-}
-
-.about {
-  padding: 15rem 2rem;
+.about, .contact {
+  padding: 0 2rem;
   flex-grow: 1;
+  display: grid;
+  align-content: center;
 }
 
 .about__container {
   display: flex;
-  align-items: center;
-  justify-content: center;  
+  justify-content: center;
   flex-direction: row-reverse;
+  transform: translateY(-30%);
 }
 
 .about__firstName,
@@ -146,7 +145,7 @@ a {
   letter-spacing: -5px;
   margin: 0px;
   padding: 0px;
-  line-height: .8;
+  line-height: 0.8;
   display: block;
 }
 
@@ -192,6 +191,54 @@ a {
 
 .about__img {
   display: none;
+}
+
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-30%);
+}
+
+.contact__description {
+  font-size: 2rem;
+  letter-spacing: 8px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.contact__wrapperEmail {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  /* background-color: var(--color-active-link); */
+  box-shadow: 0px 4px 15px -3px rgb(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: var(--color-dark-text);
+}
+
+.contact__wrapperEmail:hover {
+  background-color: var(--color-active-link);
+}
+
+.contact__wrapperEmail span {
+  /* position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-active-link);
+  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+  vertical-align: bottom; */
+
+  vertical-align: bottom;
+}
+
+.contact__email {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-style: unset;
+  font-weight: 600;
+  display: inline-block;
 }
 
 footer {
