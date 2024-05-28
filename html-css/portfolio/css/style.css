@@ -38,7 +38,7 @@ body {
   color: var(--color-dark-text);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100svh;
 
   background: var(--color-background);
   background-image: url(/assets/img/blurry.png);
@@ -124,7 +124,8 @@ a {
   outline: none;
 }
 
-.about, .contact {
+.about,
+.contact {
   padding: 0 2rem;
   flex-grow: 1;
   display: grid;
@@ -193,6 +194,17 @@ a {
   display: none;
 }
 
+.contact__img {
+  width: 200px;
+  margin-bottom: 2rem;
+}
+
+.contact__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
 .contact__container {
   display: flex;
   flex-direction: column;
@@ -202,43 +214,29 @@ a {
 }
 
 .contact__description {
-  font-size: 2rem;
   letter-spacing: 8px;
   margin-bottom: 1rem;
-  text-align: left;
 }
 
 .contact__wrapperEmail {
   padding: 1rem 2rem;
   border-radius: 50px;
-  /* background-color: var(--color-active-link); */
-  box-shadow: 0px 4px 15px -3px rgb(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 15px -3px var(--color-highlight);
   cursor: pointer;
   color: var(--color-dark-text);
+  display: flex;
+  align-items: center;
 }
 
 .contact__wrapperEmail:hover {
-  background-color: var(--color-active-link);
-}
-
-.contact__wrapperEmail span {
-  /* position: absolute;
-  top: 0;
-  right: 0;
-  background-color: var(--color-active-link);
-  margin-top: 0.5rem;
-  margin-right: 1.5rem;
-  vertical-align: bottom; */
-
-  vertical-align: bottom;
+  box-shadow: 0px 4px 15px 3px var(--color-highlight),
+    inset -2px -2px 2px 0px var(--color-highlight);
 }
 
 .contact__email {
-  font-size: 2.5rem;
-  letter-spacing: 2px;
+  font-size: 2rem;
+  letter-spacing: 1px;
   font-style: unset;
-  font-weight: 600;
-  display: inline-block;
 }
 
 footer {
