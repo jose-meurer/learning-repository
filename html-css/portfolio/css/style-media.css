@@ -1,0 +1,51 @@
+@media screen and (min-width: 48em){
+    
+    body {
+        font-size: 1.8rem;
+    }
+
+    .header__container {
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    .header__logo {
+        display: block;
+        width: 80px;
+        height: 40px;
+    }
+
+    .header__logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .about__container {
+        padding: 0 2rem;
+        justify-content: space-between;
+    }
+
+    .about__firstName{
+        font-size: 8rem;
+    }
+
+    .about__lastName::first-letter {
+        font-size: 14rem;
+        margin-left: -2%;
+      }
+
+    .about__lastName {
+        font-size: 12rem;
+    }
+
+    .about__img {
+        display: block;
+        width: 250px;
+    }
+
+    .about__img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
