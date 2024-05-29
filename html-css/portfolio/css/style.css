@@ -7,6 +7,7 @@
   --color-light-text: #fafafa;
   --color-highlight: #4488bb;
   --color-background: #ededed;
+  --color-background-gray: #c3c3c3;
   --color-box-shadow: rgb(0, 0, 0, 0.3);
 
   --font-family-primary: "Readex Pro";
@@ -62,6 +63,7 @@ a {
 .header {
   padding: 2rem;
   position: sticky;
+  z-index: 2;
   width: 100%;
   top: 0;
   left: 0;
@@ -227,6 +229,22 @@ a {
   cursor: pointer;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__wrapperEmail:active::before {
+  content: "COPIADO";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-light-text);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: green;
 }
 
 .contact__wrapperEmail:hover {
@@ -266,7 +284,6 @@ a {
 
 .skill__card:hover {
   box-shadow: 4px 4px 8px var(--color-highlight);
-  transform: scale(1.05);
 }
 
 .skill__img {
@@ -281,13 +298,18 @@ a {
 .skill_title {
   text-align: center;
   padding-top: 2rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 footer {
   text-align: center;
   background-color: var(--color-container-dark);
   color: var(--color-light-text);
-  height: var(--height-footer);
+  /* height: var(--height-footer); */
+  padding: 2rem;
   display: flex;
   align-items: center;
 }
@@ -310,5 +332,60 @@ footer a:hover {
   }
   100% {
     transform: translateY(-5px);
+  }
+}
+
+/* Skeleton */
+
+.skeleton__card {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 2px 4px 8px var(--color-box-shadow);
+  border-radius: 20px;
+  background-color: var(--color-background);
+  position: relative;
+
+  animation: loading-animation 1s infinite alternate;
+}
+
+.skeleton__image {
+  width: 100%;
+  height: 150px;
+  background-color: var(--color-background-gray);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.skeleton__image::before {
+  content: "EM BREVE";
+  position: absolute;
+  color: var(--color-light-text);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skeleton__title {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 1rem;
+  background-color: var(--color-background-gray);
+}
+
+.skeleton__description {
+  width: 100%;
+  height: 20px;
+  background-color: var(--color-background-gray);
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
   }
 }

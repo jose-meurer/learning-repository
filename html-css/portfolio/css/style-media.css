@@ -78,4 +78,8 @@
   .skill__card {
     flex-basis: 20%;
   }
+
+  .skill__title {
+    font-size: 2rem;
+  }
 }
