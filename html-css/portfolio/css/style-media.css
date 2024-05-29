@@ -74,4 +74,8 @@
     letter-spacing: 3px;
     margin-right: 10px;
   }
+
+  .skill__card {
+    flex-basis: 20%;
+  }
 }
