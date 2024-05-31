@@ -1,0 +1,61 @@
+:root {
+  --color-background: rgb(40, 52, 95);
+  --color-backgrund-container: #e4e4e4e0;
+
+  --font-family: "Readex Pro";
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+    font-family: var(--font-family), sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+}
+
+.container {
+    max-width: 640px;
+    margin: 15px auto;
+    background-color: var(--color-backgrund-container);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+}
+
+form input {
+    margin-bottom: 10px;
+    font-size: 16px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form input:focus {
+    outline: 2px solid var(--color-background);
+}
+
+form button {
+    border: none;
+    background-color: var(--color-background);
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius:5px;
+}
+
+form button:hover {
+    outline: 2px solid white;
+}
