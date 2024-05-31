@@ -30,6 +30,28 @@ body {
     border-radius: 10px;
 }
 
+.container > h1 {
+ text-align: center;
+}
+
+.container > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.result-imc{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.background-green {
+    background-color: green;
+}
+
+.background-red {
+    background-color: red;
+}
+
 form input, form label, form button {
     display: block;
     width: 100%;
