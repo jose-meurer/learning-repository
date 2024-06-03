@@ -30,7 +30,8 @@ function getDiaSemanaTexto(diaSemana) {
     case 6:
       diaSemanaTexto = "Sabado";
       return diaSemanaTexto;
-    Default: 
-        return 'Valor invalido';
+    default:
+      diaSemanaTexto = "Valor invalido";
+      return diaSemanaTexto;
   }
 }
