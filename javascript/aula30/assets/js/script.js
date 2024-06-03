@@ -7,7 +7,7 @@
   function setDataAtual() {
     const diaSemana = diaDaSemana(data.getDay());
     const dia = data.getDate();
-    const mesAno = nomeMes(dataAgora.getMonth());
+    const mesAno = nomeMes(data.getMonth());
     const ano = data.getFullYear();
     const horas = data.getHours();
     const minutos = data.getMinutes();
@@ -62,6 +62,12 @@
 
 
 // Outra forma, utilizando as ferramentas da linguagem
-// const h1 = document.querySelector('.container h1');
-// const data = new Date();
+const h1 = document.querySelector('.container h1');
+const data = new Date();
 // h1.innerHTML = data.toLocaleString('pt-BR', {dateStyle: 'full', timeStyle: 'short'});
+h1.innerHTML += '\n' + new Intl.DateTimeFormat('pt-BR', {
+    dateStyle: 'full',
+    timeStyle: 'short',
+    hour12: true,
+    timeZone: 'America/Sao_Paulo'
+}).format(data);
