@@ -1,4 +1,4 @@
-//Atribuição via desestruturação
+//Atribuição via desestruturação array
 
 //                  1     2     3     4     5     6     7     8     9
 // ...rest ...spread
@@ -22,5 +22,5 @@ const [,,[sete]] = arrNumeros; //Pouco legivel
 console.log(sete);
 
 const [arr1, arr2, arr3] = arrNumeros;
-console.log(arr3[0]);
+console.log(arr3[0]); //Mais legivel
 console.log(arrNumeros[2][0]);
