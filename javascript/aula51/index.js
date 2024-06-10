@@ -1,9 +1,9 @@
 // returno de funcao
 
 function criaMultiplicador(multiplicador) {
-    return (n) => {
-        return n * multiplicador;
-    }
+  return n => {
+    return n * multiplicador;
+  };
 }
 
 const duplica = criaMultiplicador(2);
@@ -15,11 +15,10 @@ console.log(triplica(10));
 console.log(quadriplica(20));
 
 function criaPessoa(nome) {
-    return function sobrenome (sobrenome) {
-        return nome + ' ' + sobrenome;
-    }
+  return function sobrenome(sobrenome) {
+    return nome + " " + sobrenome;
+  };
 }
 
-const pessoa = criaPessoa('José');
-
-console.log(pessoa('meurer'));
+const pessoa = criaPessoa("José");
+console.log(pessoa("meurer"));
