@@ -233,8 +233,8 @@ a {
   overflow: hidden;
 }
 
-.contact__wrapperEmail:active::before {
-  content: "COPIADO";
+.copied {
+  /* content: "COPIADO"; */
   position: absolute;
   display: flex;
   justify-content: center;
@@ -247,9 +247,10 @@ a {
   background-color: green;
 }
 
-.contact__wrapperEmail:hover {
-  box-shadow: 0px 4px 15px 3px var(--color-highlight),
-    inset -2px -2px 2px 0px var(--color-highlight);
+.contact__wrapperEmail:hover, .contact__wrapperEmail:focus{
+  /* box-shadow: 0px 4px 15px 3px var(--color-highlight); */
+  outline: 3px solid var(--color-highlight);
+  outline-offset: -3px;
 }
 
 .contact__email {

@@ -1,12 +1,34 @@
-(function() {
-    const email = document.getElementById('email');
-    const emailContainer = document.getElementsByClassName('contact__wrapperEmail')[0];
+(function () {
+  const email = document.getElementById("email");
+  const emailContainer = document.getElementsByClassName("contact__wrapperEmail")[0];
 
-    emailContainer.addEventListener('click', (e) => {
-        e.preventDefault();
+  emailContainer.addEventListener("click", eventCopyEmail);
 
-        navigator.clipboard.writeText(email.textContent);
+  emailContainer.addEventListener("keypress", e => {
+    if (e.keyCode === 13) {
+      eventCopyEmail();
+    }
+  });
 
-        alert('Email copiado para sua área de transferência!');
-    })
-})()
+  function copyEmail() {
+    navigator.clipboard.writeText(email.textContent);
+  }
+
+  function eventCopyEmail() {
+    copyEmail();
+    feedbackCopied(emailContainer);
+  }
+
+  function feedbackCopied(ele) {
+    const span = document.createElement('span');
+    span.classList.add('copied');
+    span.textContent = 'COPIADO'
+    ele.appendChild(span);
+
+    setTimeout(() => {
+        emailContainer.removeChild(span)
+        alert("Email copiado para sua área de transferência!");
+    }, 500);    
+  }
+
+})();
