@@ -53,3 +53,27 @@ f1();
 f2();
 
 gerador4().next().value();
+
+function* fibonacci() {
+  let a = 1;
+  let b = 1;
+  while (true) {
+    let curr = b;
+    b = a;
+    a = a + curr;
+    const reset = yield curr; //Ao chamar a funcao novamente, posso passar um argumento
+    console.log(reset);
+    if (reset === true) a = b = 1;
+  }
+}
+
+const sequence = fibonacci();
+console.log(sequence.next().value); // 1 Executa até o primeiro yield
+console.log(sequence.next("Argumento 1").value); // 1 Posso passar argumentos para o ultimo yield chamado
+console.log(sequence.next().value); // 2
+console.log(sequence.next().value); // 3
+console.log(sequence.next().value); // 5
+console.log(sequence.next(true).value); // 1
+console.log(sequence.next().value); // 1
+console.log(sequence.next().value); // 2
+console.log(sequence.next().value); // 3
