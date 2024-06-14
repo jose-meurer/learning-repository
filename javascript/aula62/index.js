@@ -1,22 +1,18 @@
+// Pequena revisão
 
-function* fib(){
-    let a = 1; let b = 1;
-    while(true) {
-        let curr = b;
-        b = a;
-        a = a + curr;
-        const reset = yield curr;
-        console.log(reset);
-        if(reset) a = b = 1;
-    }
-}
-const sequence = fib();
-console.log(sequence.next(false).value);     // 1
-console.log(sequence.next('Maça').value);     // 1
-console.log(sequence.next().value);     // 2
-console.log(sequence.next().value);     // 3
-console.log(sequence.next().value);     // 5
-console.log(sequence.next(true).value); // 1
-console.log(sequence.next().value);     // 1
-console.log(sequence.next().value);     // 2
-console.log(sequence.next().value);     // 3
+// const nome = 'José, Walter, Meurer'
+// let nomes = nome.split(',');
+// console.log(nomes);
+
+// const nomes = new Array(30);
+// nomes.push('Nicole');
+// nomes.shift('Joao');
+
+// console.log(nomes);
+
+const nomes = ["José", "Miguel", "João", "Valentina", "Gustavo"];
+const arr = nomes.slice(1, 5);
+console.log(arr);
+
+const novo = arr.join(" - ");
+console.log(novo);
