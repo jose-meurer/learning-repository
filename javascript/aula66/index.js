@@ -21,13 +21,13 @@ const pessoas = [
   { nome: "Wallace", idade: 47 },
 ];
 
-const nomes = pessoas.map(obj => obj.nome);
+const nomes = pessoas.map(({nome}) => nome); //Mesma coisa que pessoas.map(obj => obj.nome)
 
 const idades = pessoas.map(obj => ({ idade: obj.idade })); //Expressao
 
 const comIds = pessoas.map((obj, index) => ({ id: index + 1, ...obj }));
 
-// console.log(nomes);
+console.log(nomes);
 // console.log(idades);
 console.log(comIds);
 console.log(pessoas);
