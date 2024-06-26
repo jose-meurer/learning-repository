@@ -37,6 +37,8 @@ const p1 = criaPessoa("José", "Meurer");
 const p2 = criaPessoa("Maria", "Brown");
 console.log(Object.getOwnPropertyDescriptors(p2));
 
+
+
 function Funcao(nome) {
   this.nome = "__" + nome;
 
