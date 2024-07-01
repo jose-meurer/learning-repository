@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Formulário de cadastro</h1>
+      <ul>
+        <li>Nenhum campo pode estar vazio</li>
+        <li>Usuário só poderá conter letras e/ou números</li>
+        <li>Usuário deverá ter entre 3 e 12 caracteres</li>
+        <li>Senha precisa ter entre 6 e 12 caracteres</li>
+      </ul>
+
+      <form class="formulario">
+        <label
+          >Nome
+          <input type="text" class="nome validar" />
+        </label>
+
+        <label
+          >Sobrenome
+          <input type="text" class="sobrenome validar" />
+        </label>
+
+        <label
+          >CPF
+          <input type="text" class="cpf validar" maxlength="11"/>
+        </label>
+
+        <label
+          >Usuário
+          <input type="text" class="usuario validar" />
+        </label>
+
+        <label
+          >Senha
+          <input type="password" class="senha validar" />
+        </label>
+
+        <label>Repetir Senha
+          <input type="password" class="repetir-senha validar" />
+        </label>
+        
+        <input type="submit" value="ENVIAR">
+      </form>
+    </section>
+
+    <script src="./assets/js/validaCPF.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
