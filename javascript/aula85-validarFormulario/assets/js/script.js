@@ -104,7 +104,8 @@ class ValidaFormulario {
     p.innerText = mensagem;
     div.appendChild(p);
 
-    elemento.insertAdjacentElement("beforebegin", div);
+    // elemento.insertAdjacentElement("beforebegin", div);
+    elemento.parentElement.insertBefore(div, elemento);
   }
 
   criaDiv() {
