@@ -39,4 +39,4 @@ esperaAI("Estabelecendo conexão com o Banco de Dados", rand())
     console.log("Erro: " + err);
   });
 
-console.log("Promisses são assíncronas, então esse texto será exibido antes de tudo.");
+console.log("Promises são assíncronas, então esse texto será exibido antes de tudo.");
