@@ -1,14 +1,44 @@
 //axios
 
-/* fetch('pessoas.json')
-    .then(response => response.json())
-    .then(json => carregaElementosNaPagina(json));
-*/
+// Com xhr
+// async function carregaDados() {
+//   const request = obj => {
+//     return new Promise((resolve, reject) => {
+//       const xhr = new XMLHttpRequest();
+//       xhr.open(obj.method, obj.url, true);
+//       xhr.send();
 
+//       xhr.addEventListener("load", e => {
+//         if (xhr.status >= 200 && xhr.status < 300) {
+//           resolve(xhr.responseText);
+//         } else {
+//           reject(xhr.statusText);
+//         }
+//       });
+//     });
+//   };
+
+//   const objConfig = {
+//     url: "pessoas.json",
+//     method: "GET",
+//   };
+
+//   const json = await request(objConfig);
+//   carregaElementosNaPagina(JSON.parse(json));
+// }
+// carregaDados();
+
+// Com fetch API
+//  fetch('pessoas.json')
+//     .then(response => response.json())
+//     .then(json => carregaElementosNaPagina(json));
+
+// Com axios
 async function carregaDados(path) {
-  const resposta = await axios(path);
+  const resposta = await axios.get(path);
   carregaElementosNaPagina(resposta.data);
 }
+carregaDados("pessoas.json");
 
 function carregaElementosNaPagina(json) {
   const div = document.createElement("div");
@@ -48,9 +78,6 @@ function carregaElementosNaPagina(json) {
   div.appendChild(table);
 }
 
-carregaDados("pessoas.json");
-
-
 function criaTD() {
-    return document.createElement("td");
+  return document.createElement("td");
 }
