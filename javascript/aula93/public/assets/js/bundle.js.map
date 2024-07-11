@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;AAAA,IAAMA,GAAG,GAAG,cAAc;AAC1BC,OAAO,CAACC,GAAG,CAACF,GAAG,CAAC,C","sources":["webpack://aula93/./src/index.js"],"sourcesContent":["const msg = \"hello World!\"\r\nconsole.log(msg);"],"names":["msg","console","log"],"sourceRoot":""}
