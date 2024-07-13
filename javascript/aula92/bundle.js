@@ -17,5 +17,5 @@ console.log(novoObj);
 
 // comandos para estudar
 // npm init -y
-// npm install @babel/cli @babel/preset-env @babel/core
-// npx babel main.js -o bundle.js --presets=@babel/preset-env
+// npm install --save-dev @babel/cli @babel/preset-env @babel/core
+// npx babel main.js -o bundle.js --presets=@babel/env
