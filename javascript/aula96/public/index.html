@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Gerador de senhas</h1>
+      <p class="senha-gerada"></p>
+
+      <div class="form-senha">
+        <label>
+          Quantidade de caracteres
+          <input type="number" value="20" min="1" max="255" class="quantidade-caracteres" />
+        </label>
+        <label>
+          Adicionar letras maiúsculas
+          <input type="checkbox" class="chk-maiuscula" checked/>
+        </label>
+        <label>
+          Adicionar letras minúsculas
+          <input type="checkbox" class="chk-minuscula" />
+        </label>
+        <label>
+          Adicionar números
+          <input type="checkbox" class="chk-numero" checked/>
+        </label>
+        <label>
+          Adicionar símbolos
+          <input type="checkbox" class="chk-simbolo" />
+        </label>
+
+        <button class="btn-gerar-senha">Gerar nova senha</button>
+      </div>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>
