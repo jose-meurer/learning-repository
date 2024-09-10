@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        //bitwise (& = e(, (| = ou), (^ ou-exclusivo)
+        //bitwise (& = e), (| = ou), (^ ou-exclusivo)
 
         int mask = 0b100000;
         int n = 32;
