@@ -29,7 +29,5 @@ public class ConverterHoraGlobalParaLocal {
         System.out.println("LocalDateTime Horas: " + localDateTime.getHour());
         System.out.println("LocalDateTime Minutos: " + localDateTime.getMinute());
         System.out.println("Instant Hora Atual: " + Instant.now());
-
-
     }
 }

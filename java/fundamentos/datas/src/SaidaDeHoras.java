@@ -15,7 +15,8 @@ public class SaidaDeHoras {
         DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         //Instant pode ser formatado apenas se tiver o timezone
-        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy").withZone(ZoneId.systemDefault());
+        //DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss").withZone(ZoneId.of("America/Sao_Paulo"));
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss").withZone(ZoneId.systemDefault());
         DateTimeFormatter fmt4 = DateTimeFormatter.ISO_DATE_TIME;
         DateTimeFormatter fmt5 = DateTimeFormatter.ISO_INSTANT;
 
