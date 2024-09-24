@@ -33,5 +33,15 @@ public class Main {
             System.out.println("Update!");
         }
 
+
+        //POLIMORFISMO
+
+        Account account1 = new Account(5000, "Alex", 1000.0);
+        Account account2 = new SavingsAccount(5001, "Nicole", 1000.0, 0.02);
+
+        account1.withdraw(50.0);
+        System.out.println("Account: " + account1.getBalance());
+        account2.withdraw(50.0);
+        System.out.println("SavingAccount: " + account2.getBalance());
     }
 }
