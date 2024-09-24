@@ -39,7 +39,7 @@ public class Account {
         if(amount < balance) {
             return;
         }
-        balance -= amount;
+        balance -= amount + 5.0;
     }
 
     public void deposit(Double amount) {
