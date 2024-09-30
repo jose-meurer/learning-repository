@@ -1,5 +1,6 @@
 package entities;
 
+//classe abstrata = nao pode ser instanciada, mas pode ser estendida
 public abstract class Account {
 
     protected Integer number;
@@ -48,12 +49,16 @@ public abstract class Account {
         balance += amount;
     }
 
+    //Para ter um methodo abstrado, a classe tambem precisa ser abstrata
     @Override
-    public String toString() {
-        return "Account{" +
-                "number=" + number +
-                ", holder='" + holder + '\'' +
-                ", balance=" + balance +
-                '}';
-    }
+    public abstract String toString();
+
+//    @Override
+//    public String toString() {
+//        return "Account{" +
+//                "number=" + number +
+//                ", holder='" + holder + '\'' +
+//                ", balance=" + balance +
+//                '}';
+//    }
 }
