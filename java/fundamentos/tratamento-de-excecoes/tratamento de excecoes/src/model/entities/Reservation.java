@@ -17,12 +17,12 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Integer roomNumber, LocalDate checkin, LocalDate chechout) {
-        validateDate(checkin, chechout);
+    public Reservation(Integer roomNumber, LocalDate checkin, LocalDate checkout) throws DomainException {
+        validateDate(checkin, checkout);
 
         this.roomNumber = roomNumber;
         this.checkin = checkin;
-        this.checkout = chechout;
+        this.checkout = checkout;
     }
 
     public Integer getRoomNumber() {
@@ -41,18 +41,18 @@ public class Reservation {
         return checkout;
     }
 
-    private void validateDate (LocalDate checkin, LocalDate checkout){
+    private void validateDate(LocalDate checkin, LocalDate checkout) throws DomainException {
         LocalDate now = LocalDate.now();
         if (checkin.isBefore(now)) {
             throw new DomainException("Reservation dates must be future dates.");
         }
 
-        if(checkin.isAfter(checkout)) {
+        if (checkin.isAfter(checkout)) {
             throw new DomainException("Check-out date must be after check-in date");
         }
     }
 
-    public void updateDates(LocalDate checkin, LocalDate checkout) {
+    public void updateDates(LocalDate checkin, LocalDate checkout) throws DomainException {
         LocalDate now = LocalDate.now();
 
         if (checkin.isBefore(now) || checkout.isBefore(now)) {
@@ -75,6 +75,6 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Room " + roomNumber + ", check-in: " + dtf.format(checkin) + ", check-out: " + dtf.format(checkout) +  ", " + duration() + " nights.";
+        return "Room " + roomNumber + ", check-in: " + dtf.format(checkin) + ", check-out: " + dtf.format(checkout) + ", " + duration() + " nights.";
     }
 }
