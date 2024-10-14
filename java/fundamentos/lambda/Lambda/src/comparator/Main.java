@@ -2,9 +2,11 @@ package comparator;
 
 import comparator.entities.Product;
 
+import javax.security.auth.callback.Callback;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
