@@ -1,0 +1,18 @@
+package comparator;
+
+import comparator.entities.Product;
+
+import java.util.Comparator;
+
+public class MyComparator implements Comparator<Product> {
+
+    @Override
+    public int compare(Product p1, Product p2) {
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
+        System.out.println("***************");
+
+        return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
+    }
+}
