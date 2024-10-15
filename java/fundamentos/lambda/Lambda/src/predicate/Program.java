@@ -25,6 +25,10 @@ public class Program {
 //        products.removeIf(Product::predicate);
         products.removeIf(x -> x.getPrice() >= 410.00);
 
+        //Ao referenciar um método de instância, não é necessário passar argumentos adicionais.
+        products.removeIf(x -> x.predicate());
+        products.removeIf(x -> Product.staticPredicate(x));
+
         products.forEach(System.out::println);
     }
 }
