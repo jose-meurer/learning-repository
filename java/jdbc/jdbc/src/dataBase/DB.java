@@ -2,9 +2,7 @@ package dataBase;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class DB {
@@ -18,7 +16,6 @@ public class DB {
             try {
                 Properties props = loadProperties();
                 String url = props.getProperty("dburl");
-                System.out.println(props);
                 connection = DriverManager.getConnection(url, props);
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
@@ -39,13 +36,32 @@ public class DB {
         }
     }
 
+    public static void closeStatement(Statement state) {
+        if(state != null) {
+            try {
+                state.close();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
+        }
+    }
+
+    public static void closeResultSet(ResultSet resultSet) {
+        if(resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
+        }
+    }
+
     //Carregar os dados do file db.properties
     private static Properties loadProperties() {
         try (FileInputStream fs = new FileInputStream("db.properties")) {
 
             Properties props = new Properties();
             props.load(fs);
-            System.out.println(props);
             return props;
 
         } catch (IOException e) {
