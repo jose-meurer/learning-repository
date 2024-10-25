@@ -1,4 +1,4 @@
-package dataBase;
+package db;
 
 public class DbIntegrityException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package dataBase;
+package db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,9 +9,8 @@ public class DB {
 
     private static Connection connection = null;
 
-    //Faz a ponte de conexao ao banco
     public static Connection getConnection() {
-        if(connection == null) {
+        if (connection == null) {
 
             try {
                 Properties props = loadProperties();
@@ -24,20 +23,18 @@ public class DB {
         return connection;
     }
 
-    //Fecha a conexao ao banco
     public static void closeConnection() {
-        if(connection != null) {
+        if (connection != null) {
             try {
                 connection.close();
-            }
-            catch (SQLException e) {
+            } catch (SQLException e) {
                 throw new DbException(e.getMessage());
             }
         }
     }
 
     public static void closeStatement(Statement state) {
-        if(state != null) {
+        if (state != null) {
             try {
                 state.close();
             } catch (SQLException e) {
@@ -47,7 +44,7 @@ public class DB {
     }
 
     public static void closeResultSet(ResultSet resultSet) {
-        if(resultSet != null) {
+        if (resultSet != null) {
             try {
                 resultSet.close();
             } catch (SQLException e) {
@@ -56,7 +53,6 @@ public class DB {
         }
     }
 
-    //Carregar os dados do file db.properties
     private static Properties loadProperties() {
         try (FileInputStream fs = new FileInputStream("db.properties")) {
 
