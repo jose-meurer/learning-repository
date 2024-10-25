@@ -1,7 +1,7 @@
 package application;
 
-import dataBase.DB;
-import dataBase.DbException;
+import db.DB;
+import db.DbException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +11,7 @@ public class AtualizarDB {
     public static void main(String[] args) {
 
         Connection conn = null;
+        conn = DB.getConnection();
         PreparedStatement state = null;
         try {
             conn = DB.getConnection();

@@ -1,7 +1,7 @@
 package application;
 
-import dataBase.DB;
-import dataBase.DbException;
+import db.DB;
+import db.DbException;
 
 import java.sql.*;
 import java.time.Instant;

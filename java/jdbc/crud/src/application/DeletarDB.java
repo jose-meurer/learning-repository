@@ -1,8 +1,8 @@
 package application;
 
-import dataBase.DB;
-import dataBase.DbException;
-import dataBase.DbIntegrityException;
+import db.DB;
+import db.DbException;
+import db.DbIntegrityException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
