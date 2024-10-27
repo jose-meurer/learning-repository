@@ -5,7 +5,10 @@ import db.DbException;
 import model.dao.DepartmentDao;
 import model.entities.Department;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Set;
 
 public class DepartmentDaoJdbc implements DepartmentDao {
@@ -36,13 +39,13 @@ public class DepartmentDaoJdbc implements DepartmentDao {
 
         PreparedStatement state = null;
         ResultSet rs = null;
-        try{
+        try {
             String query = "SELECT p.* FROM departments p WHERE p.id = ?";
             state = conn.prepareStatement(query);
             state.setInt(1, id);
 
             rs = state.executeQuery();
-            if(rs.next()) {
+            if (rs.next()) {
                 Department dep = instantiationDepartment(rs);
                 return dep;
             }
@@ -50,14 +53,14 @@ public class DepartmentDaoJdbc implements DepartmentDao {
             return null;
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
-        }finally {
+        } finally {
             DB.closeStatement(state);
             DB.closeResultSet(rs);
         }
     }
 
     private Department instantiationDepartment(ResultSet rs) throws SQLException {
-        Department dep =  new Department();
+        Department dep = new Department();
         dep.setId(rs.getInt("id"));
         dep.setName(rs.getString("name"));
         return dep;
