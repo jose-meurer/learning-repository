@@ -7,6 +7,7 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
+import java.time.Instant;
 import java.util.Set;
 
 public class Program {
@@ -27,6 +28,18 @@ public class Program {
         System.out.println("=== TEST 2: findByDeparment ===");
         Set<Seller> list = sellerDao.findByDepartment(dep);
         list.forEach(System.out::println);
+
+        System.out.println();
+        System.out.println("=== TEST 3: findAll ===");
+        list = sellerDao.findAll();
+        list.forEach(System.out::println);
+
+        System.out.println();
+        System.out.println("=== TEST 4: seller insert ===");
+        Seller newSeller = new Seller(null, "Ana Pink", "ana@gmail.com",
+                Instant.parse("2000-03-24T00:00:00Z"), 4200.0, dep);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New Seller: " + newSeller);
 
 
         DB.closeConnection();
