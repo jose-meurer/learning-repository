@@ -28,9 +28,7 @@ public class Program {
         Person p = em.find(Person.class, 5);
         em.remove(p); //Com entityManager, só pode ser deletado se o obj estiver sendo monitorado
         em.getTransaction().commit();
-
-
-
+        
         em.close();
         emf.close();
     }
