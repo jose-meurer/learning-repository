@@ -1,11 +1,12 @@
 package com.josemeurer.store.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_user")
@@ -21,6 +22,10 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
+
+    @OneToMany()
+    @JsonIgnore
+    private Set<Order> orders = new LinkedHashSet<>();
 
     public User() {
     }
@@ -71,6 +76,10 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
     }
 
     @Override
