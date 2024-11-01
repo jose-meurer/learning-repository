@@ -1,8 +1,10 @@
 package com.josemeurer.store.config;
 
+import com.josemeurer.store.entities.Category;
 import com.josemeurer.store.entities.Order;
 import com.josemeurer.store.entities.User;
 import com.josemeurer.store.entities.enums.OrderStatus;
+import com.josemeurer.store.repositories.CategoryRepository;
 import com.josemeurer.store.repositories.OrderRepository;
 import com.josemeurer.store.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,6 @@ import org.springframework.context.annotation.Profile;
 
 import java.time.Instant;
 import java.util.Arrays;
-import java.util.List;
 
 @Configuration
 @Profile("test")
@@ -20,8 +21,12 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private OrderRepository orderRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
 
     @Override
@@ -40,5 +45,12 @@ public class TestConfig implements CommandLineRunner {
         Order o4 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.SHIPPED, u1);
 
         orderRepository.saveAll(Arrays.asList(o1, o2, o3, o4));
+
+        //Categories
+        Category c1 = new Category(null, "Electronics");
+        Category c2 = new Category(null, "Books");
+        Category c3 = new Category(null, "Computers");
+
+        categoryRepository.saveAll(Arrays.asList(c1, c2, c3));
     }
 }
