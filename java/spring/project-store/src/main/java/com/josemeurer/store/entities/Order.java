@@ -1,6 +1,7 @@
 package com.josemeurer.store.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.josemeurer.store.entities.enums.OrderStatus;
 import jakarta.persistence.*;
 
@@ -11,6 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@JsonPropertyOrder({"id", "moment", "total", "orderStatus", "payment", "client", "items"})
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
@@ -92,6 +94,10 @@ public class Order implements Serializable {
 
     public void setPayment(Payment payment) {
         this.payment = payment;
+    }
+
+    public Double getTotal() {
+        return items.stream().map(OrderItem::getSubTotal).reduce(0.00, Double::sum);
     }
 
     @Override

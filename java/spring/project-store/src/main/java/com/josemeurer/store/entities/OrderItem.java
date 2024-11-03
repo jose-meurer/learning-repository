@@ -1,6 +1,7 @@
 package com.josemeurer.store.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.josemeurer.store.entities.pk.OrdemItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -10,6 +11,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
+@JsonPropertyOrder({"quantity", "price", "subTotal", "product"})
 @Entity
 @Table(name = "tb_order_item")
 public class OrderItem implements Serializable {
@@ -64,6 +66,10 @@ public class OrderItem implements Serializable {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Double getSubTotal() {
+        return getPrice() * getQuantity();
     }
 
     @Override
