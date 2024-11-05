@@ -14,6 +14,7 @@ public class UserIpDto {
     private String localAddr;
     private Integer localPort;
     private String localName;
+    private String serverName;
 
     private String forwarded;
 
@@ -22,13 +23,15 @@ public class UserIpDto {
     public UserIpDto() {
     }
 
-    public UserIpDto(String remoteAddr, Integer remotePort, String remoteHost, String localAddr, Integer localPort, String localName, String forwarded) {
+    public UserIpDto(String remoteAddr, Integer remotePort, String remoteHost, String localAddr, Integer localPort, String localName, String serverName, String forwarded) {
         this.remoteAddr = remoteAddr;
         this.remotePort = remotePort;
         this.remoteHost = remoteHost;
         this.localAddr = localAddr;
         this.localPort = localPort;
         this.localName = localName;
+        this.serverName = serverName;
+        this.forwarded = forwarded;
     }
 
     public String getRemoteAddr() {
@@ -77,6 +80,14 @@ public class UserIpDto {
 
     public void setLocalName(String localName) {
         this.localName = localName;
+    }
+
+    public String getServerName() {
+        return serverName;
+    }
+
+    public void setServerName(String serverName) {
+        this.serverName = serverName;
     }
 
     public String getForwarded() {
