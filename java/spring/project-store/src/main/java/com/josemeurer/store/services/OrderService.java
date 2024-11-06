@@ -2,6 +2,7 @@ package com.josemeurer.store.services;
 
 import com.josemeurer.store.entities.Order;
 import com.josemeurer.store.repositories.OrderRepository;
+import com.josemeurer.store.services.exceptions.ResouceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,6 @@ public class OrderService {
 
     public Order findById(Long id) {
         Optional<Order> obj = orderRepository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResouceNotFoundException(id));
     }
 }

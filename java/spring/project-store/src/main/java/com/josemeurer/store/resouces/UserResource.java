@@ -68,6 +68,7 @@ public class UserResource {
         dto.setLocalAddr(request.getLocalAddr());
         dto.setLocalPort(request.getLocalPort());
         dto.setLocalName(request.getLocalName());
+        dto.setRequestUri(request.getRequestURI());
         dto.setServerName(ServletUriComponentsBuilder.fromCurrentRequest().buildAndExpand().toString());
 
         if (request.getHeader("X_FORWARDED_FOR") == null) {

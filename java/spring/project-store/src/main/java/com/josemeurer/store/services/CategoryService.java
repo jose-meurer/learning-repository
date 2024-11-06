@@ -2,6 +2,7 @@ package com.josemeurer.store.services;
 
 import com.josemeurer.store.entities.Category;
 import com.josemeurer.store.repositories.CategoryRepository;
+import com.josemeurer.store.services.exceptions.ResouceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,6 @@ public class CategoryService {
 
     public Category findById(Long id) {
         Optional<Category> obj = categoryRepository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResouceNotFoundException(id));
     }
 }
