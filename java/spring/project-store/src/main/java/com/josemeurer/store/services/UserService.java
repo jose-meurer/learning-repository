@@ -2,7 +2,9 @@ package com.josemeurer.store.services;
 
 import com.josemeurer.store.entities.User;
 import com.josemeurer.store.repositories.UserRepository;
+import com.josemeurer.store.services.exceptions.DataBaseException;
 import com.josemeurer.store.services.exceptions.ResouceNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,7 +33,13 @@ public class UserService {
     }
 
     public void delete(Long id) {
-        userRepository.deleteById(id);
+        if(!userRepository.existsById(id)) throw new ResouceNotFoundException(id);
+
+        try {
+            userRepository.deleteById(id);
+        } catch (DataIntegrityViolationException e) {
+            throw new DataBaseException(e.getMessage());
+        }
     }
 
     public User update(Long id, User obj) {
