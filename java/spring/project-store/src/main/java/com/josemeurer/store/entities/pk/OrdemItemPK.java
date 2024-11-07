@@ -52,4 +52,5 @@ public class OrdemItemPK implements Serializable {
     public int hashCode() {
         return Objects.hash(order, product);
     }
+
 }
