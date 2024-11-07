@@ -4,6 +4,7 @@ import com.josemeurer.store.entities.User;
 import com.josemeurer.store.repositories.UserRepository;
 import com.josemeurer.store.services.exceptions.DataBaseException;
 import com.josemeurer.store.services.exceptions.ResouceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,6 @@ public class UserService {
 
     public void delete(Long id) {
         if(!userRepository.existsById(id)) throw new ResouceNotFoundException(id);
-
         try {
             userRepository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
@@ -43,9 +43,13 @@ public class UserService {
     }
 
     public User update(Long id, User obj) {
-        User entity = userRepository.getReferenceById(id);
-        updateData(entity, obj);
-        return userRepository.save(entity);
+        try {
+            User entity = userRepository.getReferenceById(id);
+            updateData(entity, obj);
+            return userRepository.save(entity);
+        }catch (EntityNotFoundException e) {
+            throw new ResouceNotFoundException(id);
+        }
     }
 
     private void updateData(User entity, User obj) {

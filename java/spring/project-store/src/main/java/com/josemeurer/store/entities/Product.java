@@ -27,7 +27,6 @@ public class Product implements Serializable {
 
 
 //    Utilizando a anotação @Transient, podemos evitar que um atributo seja persistido no banco de dados através do JPA
-
     @ManyToMany
     @JoinTable(name = "tb_product_category",
             joinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"),
