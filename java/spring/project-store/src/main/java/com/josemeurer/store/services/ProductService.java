@@ -1,6 +1,5 @@
 package com.josemeurer.store.services;
 
-import com.josemeurer.store.entities.Category;
 import com.josemeurer.store.entities.Product;
 import com.josemeurer.store.repositories.CategoryRepository;
 import com.josemeurer.store.repositories.ProductRepository;
@@ -49,7 +48,6 @@ public class ProductService {
     public Product update(Long id, Product obj) {
         try {
             Product entity = productRepository.getReferenceById(id);
-            categoryRepository.findAllById(obj.getCategories().stream().map(Category::getId).toList());
             productData(entity, obj);
             return productRepository.save(entity);
         } catch (EntityNotFoundException e) {

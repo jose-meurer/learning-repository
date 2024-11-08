@@ -2,7 +2,7 @@ package com.josemeurer.store.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.josemeurer.store.entities.pk.OrdemItemPK;
+import com.josemeurer.store.entities.pk.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -20,7 +20,7 @@ public class OrderItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @EmbeddedId
-    private OrdemItemPK id = new OrdemItemPK();
+    private OrderItemPK id = new OrderItemPK();
 
     private Integer quantity;
     private Double price;

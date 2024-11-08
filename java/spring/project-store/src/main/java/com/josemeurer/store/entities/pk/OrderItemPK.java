@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class OrdemItemPK implements Serializable {
+public class OrderItemPK implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -44,7 +44,7 @@ public class OrdemItemPK implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrdemItemPK that = (OrdemItemPK) o;
+        OrderItemPK that = (OrderItemPK) o;
         return Objects.equals(order, that.order) && Objects.equals(product, that.product);
     }
 
@@ -53,4 +53,11 @@ public class OrdemItemPK implements Serializable {
         return Objects.hash(order, product);
     }
 
+    @Override
+    public String toString() {
+        return "OrderItemPK{" +
+                "order=" + order +
+                ", product=" + product +
+                '}';
+    }
 }
