@@ -31,3 +31,17 @@ function Produto(nome, preco, estoque) {
 const p1 = new Produto("Camisa", 20, 5);
 p1.estoque = 55;
 console.log(p1);
+
+function Pessoa(name, sobrenome) {
+  this.name = name;
+  this.sobrenome = sobrenome;
+  this.idade = 20;
+
+  function x() {
+    console.log(this);
+  }
+  x.call(this);
+}
+
+const p = new Pessoa("José", "Meurer");
+// console.log(p.x());
